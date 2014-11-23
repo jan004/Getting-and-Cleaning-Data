@@ -235,6 +235,6 @@ dtTidy <- dt[, list(count = .N, average = mean(value)), by=key(dt)]
 Make codebook.
 
 ```{r}
-knit("makeCodebook.Rmd", output="codebook.md", encoding="ISO8859-1", quiet=TRUE)
+knit(output="codebook.md", encoding="ISO8859-1", quiet=TRUE)
 markdown("codebook.md")
 ```
