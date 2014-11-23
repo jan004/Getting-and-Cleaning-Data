@@ -19,7 +19,7 @@ path
 Get the data
 ------------
 
-Download the file. Put it in the `Data` folder. 
+Download the file. Drag in data folder
 
 ```{r, eval=FALSE}
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
@@ -44,12 +44,7 @@ pathIn <- file.path(path, "UCI HAR Dataset")
 list.files(pathIn, recursive=TRUE)
 ```
 
-**See the `README.txt` file in `r path` for detailed information on the dataset.**
-
-For the purposes of this project, the files in the `Inertial Signals` folders are not used.
-
-
-Read the files
+Reading the files
 --------------
 
 Read the subject files.
@@ -59,14 +54,13 @@ dtSubjectTrain <- fread(file.path(pathIn, "train", "subject_train.txt"))
 dtSubjectTest  <- fread(file.path(pathIn, "test" , "subject_test.txt" ))
 ```
 
-Read the activity files. For some reason, these are called *label* files in the `README.txt` documentation.
-
+Read the activity files. 
 ```{r}
 dtActivityTrain <- fread(file.path(pathIn, "train", "Y_train.txt"))
 dtActivityTest  <- fread(file.path(pathIn, "test" , "Y_test.txt" ))
 ```
 
-Read the data files. `fread` seems to be giving me some trouble reading files. Using a helper function, read the file with `read.table` instead, then convert the resulting data frame to a data table. Return the data table.
+Read the data files. 
 
 ```{r fileToDataTable}
 fileToDataTable <- function (f) {
@@ -140,7 +134,7 @@ dt <- dt[, select, with=FALSE]
 Use descriptive activity names
 ------------------------------
 
-Read `activity_labels.txt` file. This will be used to add descriptive names to the activities.
+Read `activity_labels.txt` file. 
 
 ```{r}
 dtActivityNames <- fread(file.path(pathIn, "activity_labels.txt"))
@@ -217,8 +211,6 @@ r1 <- nrow(dt[, .N, by=c("feature")])
 r2 <- nrow(dt[, .N, by=c("featDomain", "featAcceleration", "featInstrument", "featJerk", "featMagnitude", "featVariable", "featAxis")])
 r1 == r2
 ```
-
-Yes, I accounted for all possible combinations. `feature` is now redundant.
 
 
 
