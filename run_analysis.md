@@ -19,7 +19,7 @@ path
 Get the data
 ------------
 
-Download the file. Put it in the `Data` folder. **This was already done on 2014-04-11; save time and don't evaluate again.**
+Download the file. Put it in the `Data` folder. 
 
 ```{r, eval=FALSE}
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
@@ -28,7 +28,7 @@ if (!file.exists(path)) {dir.create(path)}
 download.file(url, file.path(path, f))
 ```
 
-Unzip the file. **This was already done on 2014-04-11; save time and don't evaluate again.**
+Unzip the file. 
 
 ```{r, eval=FALSE}
 executable <- file.path("C:", "Program Files (x86)", "7-Zip", "7z.exe")
