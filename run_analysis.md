@@ -1,4 +1,4 @@
-Preliminaries
+Initial setups 
 -------------
 
 Load packages.
