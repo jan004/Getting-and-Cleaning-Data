@@ -1,8 +1,4 @@
-Codebook
-========
-See `run_analysis.md` for details on dataset creation.
-
-Variable list and descriptions
+Variable lists
 ------------------------------
 
 Variable name    | Description
@@ -60,7 +56,7 @@ key(dtTidy)
 ```
 
 
-Show a few rows of the dataset
+Show a few lines of the dataset
 ------------------------------
 
 
@@ -96,7 +92,7 @@ dtTidy
 ```
 
 
-Summary of variables
+Summary of the variables
 --------------------
 
 
@@ -129,7 +125,7 @@ summary(dtTidy)
 ```
 
 
-List all possible combinations of features
+Lists of possible combinations
 ------------------------------------------
 
 
